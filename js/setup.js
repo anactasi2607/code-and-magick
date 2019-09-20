@@ -24,7 +24,7 @@ var EYES_COLOR = ['black', 'red', 'blue', 'yellow', 'green'];
 
 var wizards = [];
 
-for (i = 0; i <= numberWizard - 1; i++) {
+for (i = 1; i <= numberWizard; i++) {
   var wizardName = Math.floor(Math.random() * WIZARD_NAMES.length);
   var wizardSurname = Math.floor(Math.random() * WIZARD_SURNAMES.length);
   var wizardCoat = Math.floor(Math.random() * COAT_COLOR.length);
