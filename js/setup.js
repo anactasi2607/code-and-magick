@@ -29,11 +29,11 @@ var createWizard = function (count) {
     var wizardCoat = getRandomValue(COAT_COLOR);
     var wizardEyes = getRandomValue(EYES_COLOR);
 
-    wizards[i] = Object.create({
+    wizards[i] = {
       name: WIZARD_NAMES[wizardName] + ' ' + WIZARD_SURNAMES[wizardSurname],
       coatColor: COAT_COLOR[wizardCoat],
       eyesColor: EYES_COLOR[wizardEyes]
-    });
+    };
   }
 };
 
