@@ -16,13 +16,13 @@ var WIZARD_SURNAMES = ['да Марья', 'Верон', 'Мирабелла', '�
 var COAT_COLOR = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
 var EYES_COLOR = ['black', 'red', 'blue', 'yellow', 'green'];
 
-var wizards = [];
-
 var getRandomValue = function (arr) {
   return Math.floor(Math.random() * arr.length);
 };
 
 var createWizard = function (count) {
+  var wizards = [];
+
   for (var i = 0; i <= count - 1; i++) {
     var wizardName = getRandomValue(WIZARD_NAMES);
     var wizardSurname = getRandomValue(WIZARD_SURNAMES);
@@ -35,9 +35,9 @@ var createWizard = function (count) {
       eyesColor: EYES_COLOR[wizardEyes]
     };
   }
-};
 
-createWizard(numberWizard);
+  return wizards;
+};
 
 var renderWizard = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
@@ -58,6 +58,8 @@ var createFragment = function (arr) {
 
   similarListElement.appendChild(fragment);
 };
+
+var wizards = createWizard(numberWizard);
 
 createFragment(wizards);
 
