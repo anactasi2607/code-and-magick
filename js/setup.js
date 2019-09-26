@@ -23,7 +23,7 @@ var getRandomValue = function (arr) {
 var createWizard = function (count) {
   var wizards = [];
 
-  for (var i = 0; i <= count - 1; i++) {
+  for (var i = 0; i < count; i++) {
     var wizardName = getRandomValue(WIZARD_NAMES);
     var wizardSurname = getRandomValue(WIZARD_SURNAMES);
     var wizardCoat = getRandomValue(COAT_COLOR);
