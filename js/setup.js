@@ -38,10 +38,13 @@ var createWizard = function (count) {
 
 var renderWizard = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
+  var renderWizardLebel = wizardElement.querySelector('.setup-similar-label');
+  var renderWizardCoat = wizardElement.querySelector('.wizard-coat');
+  var renderWizardEyes = wizardElement.querySelector('.wizard-eyes');
 
-  wizardElement.querySelector('.setup-similar-label').textContent = wizard.name;
-  wizardElement.querySelector('.wizard-coat').style.fill = wizard.coatColor;
-  wizardElement.querySelector('.wizard-eyes').style.fill = wizard.eyesColor;
+  renderWizardLebel.textContent = wizard.name;
+  renderWizardCoat.style.fill = wizard.coatColor;
+  renderWizardEyes.style.fill = wizard.eyesColor;
 
   return wizardElement;
 };
