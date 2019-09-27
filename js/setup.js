@@ -64,12 +64,20 @@ var ESC_KEYCODE = 27;
 var ENTER_KEYCODE = 13;
 
 var setupOpen = document.querySelector('.setup-open');
+var setupOpenIcon = document.querySelector('.setup-open-icon');
 var setup = document.querySelector('.setup');
 var setupClose = setup.querySelector('.setup-close');
 
+setupOpenIcon.setAttribute('tabindex', '0');
+setupClose.setAttribute('tabindex', '0');
+
 var onPopupEscPress = function (evt) {
   if (evt.keyCode === ESC_KEYCODE) {
-    closePopup();
+    if (evt.target.tagName === 'INPUT') {
+      evt.preventDefault();
+    } else {
+      closePopup();
+    }
   }
 };
 
@@ -106,6 +114,8 @@ setupClose.addEventListener('keydown', function (evt) {
 var userNameInput = setup.querySelector('.setup-user-name');
 
 userNameInput.addEventListener('invalid', function (evt) {
+  evt.preventDefault();
+
   if (userNameInput.validity.tooShort) {
     userNameInput.setCustomValidity('Имя должно состоять минимум из 2-х символов');
   } else if (userNameInput.validity.tooLong) {
