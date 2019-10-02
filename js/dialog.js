@@ -60,7 +60,7 @@
   var coatInput = wizardAppearance.querySelector('input:nth-child(2)');
 
   setupWizardCoat.addEventListener('click', function () {
-    var randomColor = window.setup.COAT_COLOR[window.setup.getRandomValue(window.setup.COAT_COLOR)];
+    var randomColor = window.setup.COAT_COLOR[window.util.getRandomValue(window.setup.COAT_COLOR)];
 
     setupWizardCoat.style.fill = randomColor;
     coatInput.value = randomColor;
@@ -70,7 +70,7 @@
   var eyesInput = wizardAppearance.querySelector('input:last-child');
 
   setupWizardEyes.addEventListener('click', function () {
-    var randomColor = window.setup.EYES_COLOR[window.setup.getRandomValue(window.setup.EYES_COLOR)];
+    var randomColor = window.setup.EYES_COLOR[window.util.getRandomValue(window.setup.EYES_COLOR)];
 
     setupWizardEyes.style.fill = randomColor;
     eyesInput.value = randomColor;
@@ -80,7 +80,7 @@
   var fireballInput = setupWizardFireball.querySelector('input');
 
   setupWizardFireball.addEventListener('click', function () {
-    var randomColor = window.setup.FIREBALL_COLOR[window.setup.getRandomValue(window.setup.FIREBALL_COLOR)];
+    var randomColor = window.setup.FIREBALL_COLOR[window.util.getRandomValue(window.setup.FIREBALL_COLOR)];
 
     setupWizardFireball.style.background = randomColor;
     fireballInput.value = randomColor;
@@ -124,8 +124,8 @@
       document.removeEventListener('mouseup', onMouseUp);
 
       if (dragged) {
-        var onClickPreventDefault = function (evt) {
-          evt.preventDefault();
+        var onClickPreventDefault = function (clickEvt) {
+          clickEvt.preventDefault();
           dialogHandler.removeEventListener('click', onClickPreventDefault);
         };
         dialogHandler.addEventListener('click', onClickPreventDefault);
