@@ -97,11 +97,11 @@
       y: evt.clientY
     };
 
-    var dragged = false;
+    var isDragged = false;
 
     var onMouseMove = function (moveEvt) {
       moveEvt.preventDefault();
-      dragged = true;
+      isDragged = true;
 
       var shift = {
         x: startCoords.x - moveEvt.clientX,
@@ -123,7 +123,7 @@
       document.removeEventListener('mousemove', onMouseMove);
       document.removeEventListener('mouseup', onMouseUp);
 
-      if (dragged) {
+      if (isDragged) {
         var onClickPreventDefault = function (clickEvt) {
           clickEvt.preventDefault();
           dialogHandler.removeEventListener('click', onClickPreventDefault);
