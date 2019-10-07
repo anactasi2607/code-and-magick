@@ -89,6 +89,10 @@
   var setupDialogElement = document.querySelector('.setup');
   var dialogHandler = setupDialogElement.querySelector('.upload');
 
+  window.dialog = {
+    setupDialogElement: setupDialogElement
+  };
+
   dialogHandler.addEventListener('mousedown', function (evt) {
     evt.preventDefault();
 
