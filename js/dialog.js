@@ -55,37 +55,6 @@
     }
   });
 
-  var wizardAppearance = document.querySelector('.setup-wizard-appearance');
-  var setupWizardCoat = document.querySelector('.wizard-coat');
-  var coatInput = wizardAppearance.querySelector('input:nth-child(2)');
-
-  setupWizardCoat.addEventListener('click', function () {
-    var randomColor = window.setup.COAT_COLOR[window.util.getRandomValue(window.setup.COAT_COLOR)];
-
-    setupWizardCoat.style.fill = randomColor;
-    coatInput.value = randomColor;
-  });
-
-  var setupWizardEyes = document.querySelector('.wizard-eyes');
-  var eyesInput = wizardAppearance.querySelector('input:last-child');
-
-  setupWizardEyes.addEventListener('click', function () {
-    var randomColor = window.setup.EYES_COLOR[window.util.getRandomValue(window.setup.EYES_COLOR)];
-
-    setupWizardEyes.style.fill = randomColor;
-    eyesInput.value = randomColor;
-  });
-
-  var setupWizardFireball = document.querySelector('.setup-fireball-wrap');
-  var fireballInput = setupWizardFireball.querySelector('input');
-
-  setupWizardFireball.addEventListener('click', function () {
-    var randomColor = window.setup.FIREBALL_COLOR[window.util.getRandomValue(window.setup.FIREBALL_COLOR)];
-
-    setupWizardFireball.style.background = randomColor;
-    fireballInput.value = randomColor;
-  });
-
   var setupDialogElement = document.querySelector('.setup');
   var dialogHandler = setupDialogElement.querySelector('.upload');
 
